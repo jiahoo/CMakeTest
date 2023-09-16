@@ -1,5 +1,6 @@
 project(HELLO)
-set(SRC_LIST main.cpp)
-message(STATUS "This is BINARY dir " ${HELLO_BINARY_DIR})
-message(STATUS "This is SOURCE dir " ${HELLO_SOURCE_DIR})
-add_executable(hello ${SRC_LIST})
+add_subdirectory(src bin)
+install(FILES COPYRIGHT README DESTINATION share/doc/cmake/)
+install(PROGRAMS runhello.sh DESTINATION bin)
+install(DIRECTORY doc/ DESTINATION share/doc/cmake)
+
